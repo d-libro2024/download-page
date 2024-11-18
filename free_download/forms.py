@@ -1,15 +1,12 @@
-# free_download/forms.py
-
 from django import forms
-from .models import EmailRegistration, DownloadableFile
+from .models import EmailRegistration, Book, DownloadableFile
 
 class EmailRegistrationForm(forms.ModelForm):
     class Meta:
         model = EmailRegistration
-        fields = ['email']
-
+        fields = ['email']  # Exclude 'book' from the form
 
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = DownloadableFile
-        fields = ['file']
+        fields = ['file', 'book']
