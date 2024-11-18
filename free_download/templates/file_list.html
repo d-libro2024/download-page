@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<div class="card shadow p-4">
+  <h2 class="mb-4">Available Files</h2>
+  <ul class="list-group">
+    {% for file in files %}
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      {{ file.file.name }}
+      <a href="{{ file.file.url }}" class="btn btn-sm btn-success">Download</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

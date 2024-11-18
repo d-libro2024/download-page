@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<div class="card shadow p-4">
+  <h2 class="mb-4">Upload a File</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.file.label_tag }} {{ form.file|add_class:"form-control" }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Upload</button>
+  </form>
+</div>
+{% endblock %}

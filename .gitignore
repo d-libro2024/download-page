@@ -1,0 +1,40 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django secret files
+*.env
+db.sqlite3
+
+# Virtual environment
+venv/
+env/
+
+# Logs
+*.log
+*.out
+*.err
+
+# Media files
+/media/
+downloads/
+
+# Static files
+/staticfiles/
+collected_static/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store
+
+# Node.js files (if applicable)
+node_modules/
+
+# System files
+Thumbs.db
