@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<h2>Available Downloads</h2>
+<ul>
+  {% for file in files %}
+  <li>
+    <a href="{% url 'download_file' file_path=file.path %}"
+      >Download {{ file.name }}</a
+    >
+  </li>
+
+  {% endfor %}
+</ul>
+{% endblock %}

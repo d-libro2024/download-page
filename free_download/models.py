@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.utils.text import slugify
 
@@ -15,12 +16,13 @@ class Book(models.Model):
         return self.name
 
 class EmailRegistration(models.Model):
-    email = models.EmailField()  # Remove `unique=True`
+    email = models.EmailField()
     book = models.ForeignKey('Book', on_delete=models.CASCADE)
     registered_at = models.DateTimeField(auto_now_add=True)
+    is_confirmed = models.BooleanField(default=False)  # Confirmation status
+    confirmation_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)  # Unique token
 
     class Meta:
-        # Enforce uniqueness of email per book
         unique_together = ('email', 'book')
 
     def __str__(self):
